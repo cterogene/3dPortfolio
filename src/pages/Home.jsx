@@ -12,6 +12,11 @@ const Home = () => {
       <Canvas className='w-full h-screen transparent' 
       camera={{near: 0.1, for: 1000 }} >
          <Suspense fallback={<Loader />} > 
+         <directionalLight />
+         <ambientLight />
+         <pointLight />
+         <spotLight />
+         <hemisphereLight />
 
          </Suspense>
 
