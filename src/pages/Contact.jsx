@@ -4,12 +4,14 @@ import { Canvas } from '@react-three/fiber';
 
 import Fox from '../models/Fox'
 import Loader from '../components/Loader';
+import useAlerts from '../hooks/useAlerts';
 
 const Contact = () => {
   const formRef = useRef(null);
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [isLoading, setIsLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
+  const {alert, showAlert, hideAlert} = useAlerts()
   const handleChange = (e) => { 
     setForm({...form, [e.target.name]: e.target.value })
   };
@@ -32,20 +34,25 @@ const Contact = () => {
 
     ).then(() => {
       setIsLoading(false);
+      showAlert({show: true, text:'Message received !', type: 'success'})
 
       setTimeout(() => {
+        hideAlert();
         setCurrentAnimation('idle')
         setForm({name: '', email: '', message: ''});
       }, [3000])
       
     }).catch((error) => {
       setIsLoading(false);
+      setCurrentAnimation('idle')
       console.log(error);
+      showAlert({show: true, text:'No message received', type: 'danger'})
+
     })
   }
 
-  const handleFocus = () => setCurrentAnimation(walk);
-  const handleBlur = () => setCurrentAnimation(idle);
+  const handleFocus = () => setCurrentAnimation('walk');
+  const handleBlur = () => setCurrentAnimation('idle');
   
 
   return (
