@@ -32,15 +32,20 @@ const Contact = () => {
 
     ).then(() => {
       setIsLoading(false);
-      setForm({name: '', email: '', message: ''});
+
+      setTimeout(() => {
+        setCurrentAnimation('idle')
+        setForm({name: '', email: '', message: ''});
+      }, [3000])
+      
     }).catch((error) => {
       setIsLoading(false);
       console.log(error);
     })
   }
 
-  const handleFocus = () => { };
-  const handleBlur = () => { };
+  const handleFocus = () => setCurrentAnimation(walk);
+  const handleBlur = () => setCurrentAnimation(idle);
   
 
   return (
@@ -113,6 +118,7 @@ const Contact = () => {
           <ambientLight intensity={0.5} />
           <Suspense fallback={<Loader />} >
             <Fox 
+            currentAnimation={currentAnimation}
             position={[0.5, 0.35, 0]}
             rotation={[12.6,-0.6,0]} 
             scale={[0.5,0.5,0.5]}/>
@@ -120,7 +126,6 @@ const Contact = () => {
           </Suspense>
 
         </Canvas>
-
 
       </div>
 
