@@ -23,18 +23,32 @@ const About = () => {
               <div className='btn-back rounded-xl' />
               <div className='btn-front rounded-xl flex justify-center items-center'>
                 <img
-                src={skill.imageUrl}
-                alt={skill.name}
-                className='w-1/2 h-1/2 object-contain'
+                  src={skill.imageUrl}
+                  alt={skill.name}
+                  className='w-1/2 h-1/2 object-contain'
 
                 />
               </div>
 
             </div>
+
+
           ))}
 
 
         </div>
+      </div>
+
+      <div className='py-16'>
+        <h3 className='subhead-text'> Work Experience</h3>
+
+        <div className='mt-5 flex flex-col gap-3 text-slate-500'>
+          <p> A Software Developer with entry-level experience specializing in user interface design, application development,
+            and continuous improvement. 
+             Adept at identifying opportunities to enhance the user experience and develop new features to improve app functionality.
+          </p>
+        </div>
+
       </div>
     </section>
   )
