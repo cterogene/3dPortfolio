@@ -14,7 +14,10 @@ const About = () => {
       </h1>
 
       <div className='mt-5 flex flex-col gap-3 text-slate-500'>
-        <p> I have a Bachelor in Computer Science, I'm based in Haiti and I work as a Software developer, Entrepreneur.
+        <p> A Software developer with a Bachelor's degree in Computer Science.
+           I specialize in blending design skills with entrepreneurial spirit to create impactful solutions. 
+           Passionate about crafting user-centric experiences and leveraging technology to drive innovation. 
+           Let's build something remarkable together!.
         </p>
       </div>
 

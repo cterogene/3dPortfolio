@@ -13,7 +13,10 @@ const Projects = () => {
       </h1>
 
       <div className='mt-5 flex flex-col gap-3 text-slate-500'>
-        <p> ...
+        <p> Welcome to my portfolio, where I showcase a collection of projects representing my passion for building 
+          innovative solutions that address real-world challenges.
+           Each project embodies a unique blend of creativity, technical expertise, and user-centric design, 
+           aiming to make a meaningful impact in various domains.
         </p>
       </div>
       <div className='flex flex-wrap my-20 gap-16'>
